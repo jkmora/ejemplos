@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style TYPE="text/css">
+        .Ocultar
+        {
+            visibility: hidden;
+        }
+        .Mostar{
+            visibility: visible;
+        }
+    </style>
+<h2>HTML Forms</h2>
+<form action="/action_page.php">
+  First name:<br>
+  <select name="pais" onchange="CambiarFormulario(this)">
+      <option value="CR">Costa Rica</option>
+      <option value="NIC">Nicaragua</option>
+      <option value="PAN">Panama</option>
+    </select>
+  <br>
+<div id="ident_CR" class="Ocultar">
+    Identificación:<br>
+    <input type="text" placeholder="01-0123-0567" name="IdentificacionCR">
+    <br><br>
+</div>
+<div id="ident" class="Mostar">
+        Identificación:<br>
+        <input type="text" name="Identificacion">
+        <br><br>
+    </div>
+  <input type="submit" value="Submit">
+</form> 
+</body>
+<script>
+    function CambiarFormulario(select){
+        debugger;
+        console.log(select.value)
+        if (select.value == "CR") {
+            $("#ident_CR").removeClass();
+            $("#ident_CR").addClass("Mostrar");
+            $("#ident").removeClass();
+            $("#ident").addClass("Ocultar");
+        }
+        else{
+            $("#ident_CR").removeClass();
+            $("#ident_CR").addClass("Ocultar");
+            $("#ident").removeClass();
+            $("#ident").addClass("Mostrar");
+        }
+    }
+</script>
+</html>
